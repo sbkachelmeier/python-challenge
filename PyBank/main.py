@@ -38,16 +38,14 @@ with open(file) as csvfile:
                 greatest_decrease = int(row[1]) - int(previous_row) 
         previous_row = int(row[1])
     average_change = total_change / (total_months-1)
+    round_average = round(average_change, 2)
         
-     
-    
-
 #Print the results!
     print("Financial Analysis")
     print("-------------------------")
-    print(total_months)
-    print(average_change)
-    print(total_pl)
-    print(greatest_increase)
-    print(greatest_decrease)
+    print("Total Months: " + str(total_months))
+    print("Average Change: " + str(round_average))
+    print("Total Profit/Loss: " + str(total_pl))
+    print("Greatest Increase: " + str(greatest_increase))
+    print("Greatest Decrease: " + str(greatest_decrease))
     
