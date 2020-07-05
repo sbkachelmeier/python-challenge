@@ -30,15 +30,21 @@ with open(file) as csvfile:
     print("-------------------------")
     print(f"Total Votes: {total_votes}")
     print("-------------------------")
+    winner_total = 0 
+    winner_name = str()
     for candidate in candidates:
-        candidates_name = candidates[name]
         vote_count = candidates[candidate]
         percentage = "{:.0%}".format(vote_count/total_votes)
+        if winner_total < vote_count:
+            winner_total = vote_count
+            winner_name = candidate
         
         print(f"{candidate}: {vote_count} {percentage}")
     print("-------------------------")
+    
     print("The winner is... ")
-    print(winner)
+    print(winner_name)
+
 
 
     
